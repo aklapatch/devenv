@@ -1,6 +1,6 @@
 @echo off
 if exist install cd install
-set VAR=%~dp0
+set VAR=%~dp0;%~dp07-Zip
 
 for /d %%D in (*) do call :concat %%~fD
 

@@ -1,6 +1,5 @@
 
-set "DEST=%~dp0..\"
-call :resolve %DEST% FIN
+
 set name=7zip
 set MAVER=18
 set MIVER=05
@@ -11,6 +10,8 @@ echo %VER%
 set packname=7z%VER%-x64.msi
 set finalname=7z.exe
 set URL="https://www.7-zip.org/a/%packname%"
+set "DEST=%~dp0..\"
+call :resolve %DEST% FIN
 call :%*
 
 :get

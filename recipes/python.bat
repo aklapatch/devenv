@@ -12,6 +12,8 @@ set URL="https://www.python.org/ftp/python/%VER%/python-%VER%-embed-amd64.zip"
 if not exist %packname% wget %URL%
 
 :unpack
-7z x %packname%
+mkdir python
+7z x %packname% -opython
 
 :install
+move python ..\install\

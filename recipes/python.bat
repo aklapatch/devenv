@@ -17,3 +17,5 @@ mkdir python
 
 :install
 move python ..\install\
+
+rem modify the python37._pth to include Lib\site-packages if pip is installed

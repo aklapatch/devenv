@@ -12,9 +12,9 @@ set URL="http://strawberryperl.com/download/5.28.0.1/%packname%"
 if not exist %packname% wget %URL%
 
 :unpack
-7z x %packname% -o..\install\%name%
+7z x %packname% -otmp
 
 :install
-rem move "%packname:~0,-4%\*" "..\install\%name%"
+move tmp\%name% "..\install\%name%"
 rem cleanup
-rem rmdir /s /q %packname:~0,-4%
+rmdir /s /q tmp

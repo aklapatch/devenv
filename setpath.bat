@@ -16,7 +16,6 @@ set VAR=%1;%VAR%
 if exist %1\bin set VAR=%1\bin;%VAR%
 if exist %1\Scripts set VAR=%1\Scripts;%VAR%
 if exist %1\libexec set VAR=%1\libexec;%VAR%
-if exist %1\perl\bin set VAR=%1\perl\bin;%VAR%
 goto :eof
 
 :endof

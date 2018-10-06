@@ -14,8 +14,8 @@ if not exist %packname% wget %URL%
 :unpack
 mkdir python
 7z x %packname% -opython
+:: deleting this file makes the python installation behave normally
+del python\python37._pth
 
 :install
 move python ..\install\
-
-rem modify the python37._pth to include Lib\site-packages if pip is installed

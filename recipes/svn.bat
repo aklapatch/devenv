@@ -9,7 +9,7 @@ set packname=TortoiseSVN-%VER%.28295-x64-svn-1.10.2.msi
 set URL="https://osdn.net/projects/tortoisesvn/storage/%VER%/Application/%packname%"
 
 :get
-if not exist %packname% wget --no-check-certificate %URL%
+wget --no-check-certificate -nc %URL%
 
 :unpack
 set "instdir=..\install\%name%"

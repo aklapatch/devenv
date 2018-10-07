@@ -9,7 +9,7 @@ set packname=strawberry-%name%-%VER%-64bit.zip
 set URL="http://strawberryperl.com/download/5.28.0.1/%packname%"
 
 :get
-if not exist %packname% wget %URL%
+wget -nc %URL%
 
 :unpack
 7z x %packname% -otmp

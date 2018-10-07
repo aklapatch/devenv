@@ -1,6 +1,4 @@
 
-call :%*
-
 set name=7zip
 set MAVER=18
 set MIVER=05
@@ -12,7 +10,7 @@ set finalname=7z.exe
 set URL="https://www.7-zip.org/a/%packname%"
 
 :get
-if not exist %packname% wget %URL%
+wget -nc %URL%
 goto :unpack
 
 :resolve

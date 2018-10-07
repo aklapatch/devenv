@@ -9,7 +9,7 @@ set packname=%name%-%VER%-win64-x64.zip
 set URL="https://cmake.org/files/v%MAVER%.%MIVER%/%packname%"
 
 :get
-if not exist %packname% wget %URL%
+wget -nc %URL%
 
 :unpack
 mkdir ..\install\%name%

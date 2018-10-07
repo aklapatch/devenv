@@ -9,7 +9,7 @@ set packname=%name%-%VER%-embed-amd64.zip
 set URL="https://www.python.org/ftp/python/%VER%/python-%VER%-embed-amd64.zip"
 
 :get
-if not exist %packname% wget %URL%
+wget -nc %URL%
 
 :unpack
 mkdir python

@@ -9,7 +9,7 @@ set packname=%name%-win.zip
 set URL="https://github.com/ninja-build/ninja/releases/download/v%VER%/%name%-win.zip"
 
 :get
-if not exist %packname% wget %URL%
+wget -nc %URL%
 
 :unpack
 mkdir ..\install\%name%

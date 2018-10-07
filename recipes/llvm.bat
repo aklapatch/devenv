@@ -9,7 +9,7 @@ set packname=LLVM-%VER%-win64.exe
 set URL="http://releases.llvm.org/%VER%/%packname%"
 
 :get
-if not exist %packname% wget %URL%
+wget -nc %URL%
 
 :unpack
 7z x %packname% -o..\install\%name%

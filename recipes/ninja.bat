@@ -1,4 +1,4 @@
-@setlocal enableextensions enabledelayedexpansion
+
 set name=ninja
 set MAVER=1
 set MIVER=8

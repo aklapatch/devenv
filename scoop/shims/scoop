@@ -1,0 +1,5 @@
+#!/bin/sh
+DIR=$(cd $(dirname "$0"); pwd)
+FLASH=${DIR:1:1}
+echo $FLASH
+powershell.exe -ex unrestricted "${FLASH^^}:\scoop\apps\scoop\current\bin\scoop.ps1"  "$@"

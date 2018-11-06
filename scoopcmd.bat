@@ -23,8 +23,8 @@ doskey clang++=clang++ --target=x86_64-windows-gnu $*
 
 :: final steps
 cd %~dp0
-cmd \k %~dp0scoop\shims\scoop.cmd  rem call scoop terminal
-bash
+start %~dp0scoop\shims\scoop.cmd
+
 goto :eof
 
 :: set path

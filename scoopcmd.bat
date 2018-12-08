@@ -16,10 +16,6 @@ for /d %%D in (*) do (
 :: set final environment
 set "CC=clang
 set "CXX=clang++"
-set "CFLAGS=--target=x86_64-windows-gnu"
-set "CXXFLAGS=--target=x86_64-windows-gnu"
-doskey clang=clang --target=x86_64-windows-gnu $*
-doskey clang++=clang++ --target=x86_64-windows-gnu $*
 
 :: final steps
 cd %~dp0
@@ -31,6 +27,8 @@ goto :eof
 :: set path
 :concat 
 set "VAR=%1"
+if exist %1\mingw64\bin set "VAR=%1\mingw64\bin;%VAR%"
+if exist %1\usr\bin set "VAR=%1\usr\bin;%VAR%"
 if exist %1\bin set "VAR=%1\bin;%VAR%"
 if exist %1\Scripts set "VAR=%1\Scripts;%VAR%"
 if exist %1\libexec set "VAR=%1\libexec;%VAR%"

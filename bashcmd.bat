@@ -1,5 +1,6 @@
 @echo off
 SETLOCAL EnableDelayedExpansion
+
 :: scoop directory
 set "SCOOP_GLOBAL=%~dp0scoop\apps"
 set "SCOOP=%~dp0scoop"
@@ -11,21 +12,22 @@ for /d %%D in (*) do (
 	call :loop
 	cd ..
 )
+
 :: set final environment
 set "CC=clang
 set "CXX=clang++"
-set "CFLAGS=--target=x86_64-windows-gnu"
-set "CXXFLAGS=--target=x86_64-windows-gnu"
-doskey clang=clang --target=x86_64-windows-gnu $*
-doskey clang++=clang++ --target=x86_64-windows-gnu $*
 
+:: final steps
 cd %~dp0
-bash
+set "PATH=%PATH%;%~dp0scoop\shims\
+mingw64
 goto :eof
 
 :: set path
 :concat 
 set "VAR=%1"
+if exist %1\mingw64\bin set "VAR=%1\mingw64\bin;%VAR%"
+if exist %1\usr\bin set "VAR=%1\usr\bin;%VAR%"
 if exist %1\bin set "VAR=%1\bin;%VAR%"
 if exist %1\Scripts set "VAR=%1\Scripts;%VAR%"
 if exist %1\libexec set "VAR=%1\libexec;%VAR%"
@@ -37,3 +39,4 @@ goto :eof
 :loop
 for /d %%E in (*) do if NOT "%%E"=="current" call :concat %%~fE
 goto :eof
+

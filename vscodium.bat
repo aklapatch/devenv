@@ -10,9 +10,8 @@ set "ToolsDirs=%MSYSDir%mingw64\bin;%MSYSDir%usr\bin;%AuxDir%;%AuxDir%bin
 :: extend the path to include an auxiliary location (msys and tools dir)
 set "PATH=%ToolsDirs%;%PATH%"
 
-:: final steps
+:: change extension dir and settings dir
 cd %~dp0
-start %VSCODEDIR%VSCodium.exe --use-data-dir "%VSCODEDIR%settings" --extensionHomePath "%VSCODEDIR%extensions"
+start %VSCODEDIR%VSCodium.exe --user-data-dir "%VSCODEDIR%settings" --extensions-dir "%VSCODEDIR%extensions"
 
-cmd \k
 goto :eof
